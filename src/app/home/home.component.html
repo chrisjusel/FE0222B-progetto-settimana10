@@ -1,0 +1,26 @@
+<div class="container mt-5 d-flex">
+    <input type="text" name="task" id="task" #task />
+    <button class="btn btn-success" (click)="getTaskFromInput(task.value)">
+        Aggiungi task
+    </button>
+</div>
+<div class="container mt-4">
+    <ng-container *ngIf="tasks; else elseTemplate">
+        <ng-container *ngIf="tasks.length > 0; else elseNoTask">
+            <ul>
+                <li *ngFor="let task of tasks; trackBy: trackbyId; let i = index">
+                    {{ task.title }}
+                    <button (click)="changeStatus(i)">Fatto</button>
+                </li>
+            </ul>
+        </ng-container>
+    </ng-container>
+</div>
+
+<ng-template #elseTemplate>
+    <p class="text-center">Recupero Task...</p>
+</ng-template>
+
+<ng-template #elseNoTask>
+    <p class="text-center">Non ci sono task</p>
+</ng-template>

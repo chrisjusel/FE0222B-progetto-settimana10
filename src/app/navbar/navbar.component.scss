@@ -1,0 +1,23 @@
+img{
+    width: 10%;
+}
+
+.navbar{
+    border-bottom: 4px solid red;
+}
+
+a{
+    color: white !important;
+    font-size: 1.5em;
+    text-indent: 20px;
+    cursor: pointer;
+    &:hover{
+        color: rgb(250, 112, 0) !important;
+        text-decoration: underline dashed;
+    }
+}
+
+.active{
+    color: red !important;
+    text-decoration: underline;
+}

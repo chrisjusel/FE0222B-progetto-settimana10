@@ -1,0 +1,20 @@
+<div class="container mt-5 text-center">
+    <h1>Task completati</h1>
+    <ng-container *ngIf="completedTasks; else elseTemplate">
+        <ng-container *ngIf="completedTasks.length > 0; else elseNoTask">
+            <ul>
+                <li *ngFor="let task of completedTasks">
+                    {{ task.title }}
+                </li>
+            </ul>
+        </ng-container>
+    </ng-container>
+</div>
+
+<ng-template #elseTemplate>
+    <p class="text-center">Recupero Task...</p>
+</ng-template>
+
+<ng-template #elseNoTask>
+    <p class="text-center">Non ci sono task</p>
+</ng-template>
